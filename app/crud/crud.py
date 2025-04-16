@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from app.models.models import SaleOrder, SaleOrderLine
 from app.schemas.schemas import SaleOrderCreate
 
+
 def create_sale_order_with_lines(db: Session, order_data: SaleOrderCreate):
     order = SaleOrder(
         name=order_data.name,
@@ -28,6 +29,7 @@ def create_sale_order_with_lines(db: Session, order_data: SaleOrderCreate):
 
     db.commit()
     return order
+
 
 def get_sale_orders(db: Session, customer_id: int = None, company_id: int = None):
     query = db.query(SaleOrder)

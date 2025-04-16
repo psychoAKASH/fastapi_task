@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Numeric, Text, ForeignKey, DateT
 from sqlalchemy.orm import relationship
 from app.db.database import Base
 
+
 class SaleOrder(Base):
     __tablename__ = "sale_order"
 
@@ -21,6 +22,7 @@ class SaleOrder(Base):
     item_total = Column(Numeric)
 
     lines = relationship("SaleOrderLine", back_populates="order")
+
 
 class SaleOrderLine(Base):
     __tablename__ = "sale_order_line"

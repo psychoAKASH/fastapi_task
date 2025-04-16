@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
 
+
 class SaleOrderLineCreate(BaseModel):
     name: str
     price_unit: float
@@ -14,6 +15,7 @@ class SaleOrderLineCreate(BaseModel):
     currency_id: int
     company_id: int
     create_date: datetime
+
 
 class SaleOrderCreate(BaseModel):
     name: str
@@ -31,7 +33,9 @@ class SaleOrderCreate(BaseModel):
     item_total: float
     lines: List[SaleOrderLineCreate]
 
+
 class SaleOrderOut(SaleOrderCreate):
     id: int
+
     class Config:
         orm_mode = True
