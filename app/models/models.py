@@ -39,4 +39,4 @@ class SaleOrderLine(Base):
     company_id = Column(Integer)
     create_date = Column(DateTime)
 
-    orde = relationship("SaleOrder", back_populates="lines")
+    order = relationship("SaleOrder", back_populates="lines")
